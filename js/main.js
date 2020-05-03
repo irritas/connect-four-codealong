@@ -92,14 +92,9 @@ function render() {
 
     // Render turn or winner
     if (winner) {
-        if (winner === 2) {
-            msgEl.innerHTML = `TIE GAME!`;
-        } else {
-            msgEl.innerHTML = `<span style="color: ${playerLookup[winner]}">${playerLookup[winner].toUpperCase()} WINS!`;
-        }
-    } else {
-        msgEl.innerHTML = `<span style="color: ${playerLookup[turn]}">${playerLookup[turn].toUpperCase()}'S</span> TURN`;
-    }
+        if (winner === 2) msgEl.innerHTML = `TIE GAME!`;
+        else msgEl.innerHTML = `<span style="color: ${playerLookup[winner]}">${playerLookup[winner].toUpperCase()} WINS!`;
+    } else msgEl.innerHTML = `<span style="color: ${playerLookup[turn]}">${playerLookup[turn].toUpperCase()}'S</span> TURN`;
 
     // Draw board
     board.forEach((colArr, colIdx) => {
